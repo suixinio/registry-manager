@@ -1,3 +1,3 @@
-# registry-ui
+# registry-manager
 
-A docker registry web console
+A docker registry manager

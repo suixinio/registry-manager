@@ -1,0 +1,12 @@
+version: '3'
+services:
+  registry:
+    image: registry:latest
+    container_name: registry
+    restart: always
+    logging:
+      options:
+        max-size: "100m"
+        max-file: "2"
+    ports:
+      - '3002:5000'
