@@ -1,21 +1,26 @@
 package router
 
 import (
+	"github.com/gin-contrib/gzip"
 	"github.com/gin-gonic/gin"
 	"registry-manager/api"
 	"registry-manager/middleware"
 )
 
-func InitRouter() {
+func InitRouter() *gin.Engine {
 	r := gin.New()
 
-	registryV2 := r.Group("/v2")
-	registryV2.Use(middleware.BasicAuth())
+	// api router
+	r.Use(gzip.Gzip(gzip.DefaultCompression, gzip.WithExcludedPaths([]string{"/api/"})))
+	// 静态文件
+	r.Use(middleware.FrontendFileHandler())
 
-	registryV2.Any("/*any", api.RegistryV2Any)
-
-	err := r.Run(":3001")
-	if err != nil {
-		return
+	{
+		// registry V2 的路由
+		registryV2 := r.Group("/v2")
+		registryV2.Use(middleware.BasicAuth())
+		registryV2.Any("/*any", api.RegistryV2Any)
 	}
+
+	return r
 }

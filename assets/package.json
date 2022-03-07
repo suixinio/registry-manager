@@ -1,7 +1,7 @@
 {
-  "name": "arco-design-pro",
+  "name": "registry-manager-frontend",
   "version": "1.0.0",
-  "description": "Arco Design Pro",
+  "description": "registry-manager-frontend",
   "scripts": {
     "start": "react-app-rewired start",
     "dev": "react-app-rewired start",
@@ -42,6 +42,7 @@
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "copy-webpack-plugin": "^10.2.4",
     "customize-cra": "^1.0.0",
     "customize-cra-less-loader": "^2.0.0",
     "eslint-config-prettier": "^8.3.0",

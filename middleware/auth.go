@@ -2,7 +2,6 @@ package middleware
 
 import (
 	"encoding/base64"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -21,7 +20,6 @@ func BasicAuth() gin.HandlerFunc {
 	realm := `Basic realm="basic-realm"`
 	return func(c *gin.Context) {
 		user, found := SearchCredential(c.GetHeader("Authorization"))
-		fmt.Println(user, found)
 		if !found {
 			//	not found
 			c.Header("WWW-Authenticate", realm)
