@@ -1,6 +1,6 @@
 {
   "name": "registry-manager-frontend",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "registry-manager-frontend",
   "scripts": {
     "start": "react-app-rewired start",

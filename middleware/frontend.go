@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"io/ioutil"
 	"net/http"
@@ -40,6 +41,7 @@ func FrontendFileHandler() gin.HandlerFunc {
 			c.Next()
 			return
 		}
+		fmt.Println(path)
 
 		// 不存在的路径和index.html均返回index.html
 		if (path == "/index.html") || (path == "/") || !bootstrap.StaticFS.Exists("/", path) {
