@@ -35,6 +35,8 @@ func (e GinEmbedFileSystem) Exists(prefix string, path string) bool {
 	return true
 }
 
+// EmbedFolder gin static
+// [open] https://github.com/gin-contrib/static/issues/19
 func EmbedFolder(fsEmbed embed.FS, targetPath string, index bool) static.ServeFileSystem {
 	subFS, err := fs.Sub(fsEmbed, targetPath)
 	if err != nil {
