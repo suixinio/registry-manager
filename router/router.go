@@ -12,6 +12,8 @@ func InitRouter() *gin.Engine {
 
 	// api router
 	r.Use(gzip.Gzip(gzip.DefaultCompression, gzip.WithExcludedPaths([]string{"/api/"})))
+	// Logger
+	r.Use(middleware.Logger())
 	// 静态文件
 	r.Use(middleware.FrontendFileHandler())
 
