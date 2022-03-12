@@ -104,5 +104,6 @@ fabric.properties
 /statik
 /main
 /statics
-
+conf.ini
 *.log
+*.db

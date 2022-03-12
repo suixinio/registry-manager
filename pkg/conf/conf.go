@@ -80,13 +80,6 @@ func Init(path string) {
 	sections := map[string]interface{}{
 		"Database": DatabaseConfig,
 		"System":   SystemConfig,
-		//"SSL":        SSLConfig,
-		//"UnixSocket": UnixConfig,
-		//"Captcha":    CaptchaConfig,
-		//"Redis":      RedisConfig,
-		//"Thumbnail":  ThumbConfig,
-		//"CORS":       CORSConfig,
-		//"Slave":      SlaveConfig,
 	}
 	for sectionName, sectionStruct := range sections {
 		err = mapSection(sectionName, sectionStruct)
