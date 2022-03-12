@@ -2,13 +2,6 @@
 
 A docker registry manager
 
-# env
+# env 
 
-```
-go get github.com/rakyll/statik
-```
-
-```
-statik -src=/path/to/your/project/assets/build
-```
-
+go >= 1.16
